@@ -1,36 +1,78 @@
 /* /Layout/MainLayout.razor.rz.scp.css */
-.sidebar[b-rg6hjp3r2s] {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 250px;
-    height: 100vh;
-    background: linear-gradient(180deg, #2D1B0E 0%, #5C2E00 55%, #8B4513 100%);
-    overflow-y: auto;
-    z-index: 100;
-}
-
 .page[b-rg6hjp3r2s] {
+    position: relative;
     display: flex;
+    flex-direction: column;
 }
 
 main[b-rg6hjp3r2s] {
-    margin-left: 250px;
     flex: 1;
 }
 
+.sidebar[b-rg6hjp3r2s] {
+    background-image: linear-gradient(180deg, rgb(5, 39, 103) 0%, #3a0647 70%);
+}
+
 .top-row[b-rg6hjp3r2s] {
-    background-color: #ffffff;
-    border-bottom: 2px solid #F0D9C0;
+    background-color: #f7f7f7;
+    border-bottom: 1px solid #d6d5d5;
+    justify-content: flex-end;
     height: 3.5rem;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
-    padding: 0 1.5rem;
 }
 
-article[b-rg6hjp3r2s] {
-    padding: 1.5rem;
+    .top-row[b-rg6hjp3r2s]  a, .top-row[b-rg6hjp3r2s]  .btn-link {
+        white-space: nowrap;
+        margin-left: 1.5rem;
+        text-decoration: none;
+    }
+
+    .top-row[b-rg6hjp3r2s]  a:hover, .top-row[b-rg6hjp3r2s]  .btn-link:hover {
+        text-decoration: underline;
+    }
+
+    .top-row[b-rg6hjp3r2s]  a:first-child {
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+@media (max-width: 640.98px) {
+    .top-row:not(.auth)[b-rg6hjp3r2s] {
+        display: none;
+    }
+
+    .top-row.auth[b-rg6hjp3r2s] {
+        justify-content: space-between;
+    }
+
+    .top-row[b-rg6hjp3r2s]  a, .top-row[b-rg6hjp3r2s]  .btn-link {
+        margin-left: 0;
+    }
+}
+
+@media (min-width: 641px) {
+    .page[b-rg6hjp3r2s] {
+        flex-direction: row;
+    }
+
+    .sidebar[b-rg6hjp3r2s] {
+        width: 250px;
+        height: 100vh;
+        position: sticky;
+        top: 0;
+    }
+
+    .top-row[b-rg6hjp3r2s] {
+        position: sticky;
+        top: 0;
+        z-index: 1;
+    }
+
+    .top-row[b-rg6hjp3r2s], article[b-rg6hjp3r2s] {
+        padding-left: 2rem !important;
+        padding-right: 1.5rem !important;
+    }
 }
 /* /Layout/NavMenu.razor.rz.scp.css */
 .navbar-toggler[b-8lk472ykml] {
